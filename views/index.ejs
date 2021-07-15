@@ -1,0 +1,15 @@
+<script defer src="/js/index.js"></script>
+<link rel="stylesheet" href="/css/chat.css">
+<main>
+    <section class="doubleContainer">
+        <div class="chat" id="chatContainer">
+            <% messages.forEach(element => { %>
+                <p><%= element %></p>
+            <% }); %> 
+        </div>
+        <form name="post" id="messageContainer" class="rowbox fullWidth">
+            <textarea placeholder="Type something" name="messageInput" id="messageInput"></textarea>
+            <button type="submit" id="submitButton">post</button>
+        </form>
+    </section>
+</main>

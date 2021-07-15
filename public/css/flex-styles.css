@@ -1,0 +1,10 @@
+.rowbox {
+    display: flex;
+    flex: row nowrap;
+}
+
+.doubleContainer {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
