@@ -9,6 +9,18 @@ if (window.innerWidth < 600) {
     submitButton.innerHTML = '<img src="/svg/cloud-upload.svg"></img>';
 }
 
+//get users name
+getUN = () => {
+    if (localStorage.darkChat_UN) {
+        return localStorage.darkChat_UN;
+    } else {
+        let UN = prompt('name:');
+        localStorage.setItem("darkChat_UN", UN);
+        return UN;
+    }
+}
+
+const username = getUN();
 
 //EVENT LISTNERS
 //chat container
@@ -27,13 +39,14 @@ messageContainer.addEventListener('submit', (e) => {
 
     //convert input value to object
     const data = {
-        sender: 'client',
+        sender: username,
         value: message
     }
 
     //post to server and get response
     if (message != '') {
         submitButton.style.backgroundColor = 'grey';
+        submitButton.innerHTML = '<img src="/svg/spinner.svg" style="height: 50px; width: 50px;"></img>';
         fetch('/api', {
             method: 'POST',
             headers: {
@@ -43,7 +56,7 @@ messageContainer.addEventListener('submit', (e) => {
         })
             .then(res => res.json())
             .then(res => {
-                console.log(res.response);
+                //console.log(res);
                 setTimeout(_ => {
                     location.reload(true);
                 }, 1000)
