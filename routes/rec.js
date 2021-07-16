@@ -15,7 +15,7 @@ async function append(data) {
 router.post('/api', (req, res) => {
     let requestData = req.body;
     console.log(requestData);
-    append(requestData.value).then(res.send({respose: 'recieved'}))
+    append(requestData).then(res.send({respose: 'recieved'}))
 });
 
 //export

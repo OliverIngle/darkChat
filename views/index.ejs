@@ -4,7 +4,10 @@
     <section class="doubleContainer">
         <div class="chat" id="chatContainer">
             <% messages.forEach(element => { %>
-                <p><%= element %></p>
+                <div>
+                    <h3><%= element.sender %></h3>
+                    <p><%= element.value %></p>
+                </div>
             <% }); %> 
         </div>
         <form name="post" id="messageContainer" class="rowbox fullWidth">

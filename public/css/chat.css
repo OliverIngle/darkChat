@@ -6,7 +6,7 @@ div.chat {
     overflow-y: scroll;
 }
 
-.chat p {
+.chat div {
     border-left: 3px solid #75E6DA;
     padding-left: 3px;
 }
