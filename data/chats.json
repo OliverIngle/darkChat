@@ -1,12 +1,8 @@
 {
     "chats": [
         {
-            "sender": "yomum",
-            "value": "hello world\n"
-        },
-        {
-            "sender": "yomum",
-            "value": "erteryze"
+            "sender": "ADMIN",
+            "value": "Welcome"
         }
     ]
 }

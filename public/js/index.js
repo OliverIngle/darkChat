@@ -10,17 +10,20 @@ if (window.innerWidth < 600) {
 }
 
 //get users name
-getUN = () => {
+getUN = (message) => {
     if (localStorage.darkChat_UN) {
         return localStorage.darkChat_UN;
     } else {
-        let UN = prompt('name:');
+        let UN = prompt(`${message}`);
+        if (['AMDMIN', 'admin', 'server'].find(name => name == UN)) {
+            getUN('Please pick a valid username:')
+        }
         localStorage.setItem("darkChat_UN", UN);
         return UN;
     }
 }
 
-const username = getUN();
+const username = getUN('name:');
 
 //EVENT LISTNERS
 //chat container

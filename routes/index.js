@@ -6,9 +6,13 @@ const fs = require('fs').promises;
 //data
 //get data asyncronously
 const mesList = async () => {
-    const file = await fs.readFile('./data/chats.json', 'utf-8');
-    const json = await JSON.parse(file);
-    return json.chats;
+    try {
+        const file = await fs.readFile('./data/chats.json', 'utf-8');
+        const json = await JSON.parse(file);
+        return json.chats;
+    } catch(error) {
+        console.log(error);
+    }
 }
 
 //route
